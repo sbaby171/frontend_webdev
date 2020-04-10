@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>04092020</title>
+
+
+    <style>
+        /* Basic wireframing: 
+            One thing I have noticed in my few days of learnign frontend 
+            web-development is that the HTML and CSS are tightly coupled. 
+            What I mean by that is they *need* to know about each other 
+            in some regard. I have seem and implemented some designs and 
+            have noticed it is a bit difficult to complete decouple the two
+            from each other. Whether that be do to obvious issues with naming
+            of selectors or to hard-coded values in grid layouts. 
+
+            Of course, I assume there are ways to separate these things more 
+            and more, which hopefully I come to in my work, but so far I have
+            not seen it.
+
+
+         In this example, I will be giving bright and clashing colors to the 
+            elements in efforts to hightlight the partions and effects from 
+            the CSS. 
+
+         Q: Why cant you resuse CSS class selector defintions for multiple 
+            HTML elements? I want to create a template, via unique name, 
+            that is used everytime a unique name is used. 
+        */
+
+        body {
+            background-color: oldlace;
+        }
+        /* ------------------------------------------------------------
+            Header/Footer Block ---------------------------------------
+            -----------------------------------------------------------
+        */
+        header,footer,main {
+            background-color: black;
+            color: white;
+            padding: 5em;
+            margin: 1em;
+        }
+        header,footer,main,article,section, .flip-card-front > h1 {
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+        article > h1 {
+            color: lightblue;    
+        }
+        /*NOTE: Using semantic HTML will require one to change their CSS.*/
+
+        /* ------------------------------------------------------------
+            Main Block ------------------------------------------------
+            -----------------------------------------------------------
+        */
+        /*
+            "The main content area of a document includes content that is 
+            unique to the document and exludes content that is repeated 
+            across a set of documents such as site navigation links, 
+            copyright information, site logos, banners, and search forms
+            (unless the document or application's main function is that of 
+            search form0."
+        */
+
+         article.matrix, article.matrix1, article.matrix2 {
+                display: grid;
+                grid-gap: 5px;
+                grid-template-columns: 33% 33% 33%;
+         }
+
+
+
+        /* ------------------------------------------------------------
+            Section Block ---------------------------------------------
+            -----------------------------------------------------------
+        */
+        section {
+            padding: 5px;
+        }
+        section > p {
+            font-family: Arial;
+        }
+        section.card {
+            color: white;
+        }
+        section.card:hover {
+            color: black;
+            background-color: lightblue;
+            border-radius: 10px;
+        }
+
+        /* Card flip */
+
+        .flip-card-container {
+            width: 100%;
+            height: 100%;
+            perspective: 500px;
+            /*border: 1px solid white;*/
+        }
+        .flip-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+ 
+        }
+
+        .flip-card-container:hover .flip-card .flip-card-front {
+            color: black;
+            background-color: lightblue;
+            border-radius: 10px;
+        }
+
+        .flip-card-container.flip .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+ 
+
+        }
+
+        .flip-card-front {
+            background-color: black;
+            color: white;
+            padding: 5px;
+            font-family: Arial;
+        }
+
+        .flip-card-back {
+            background-color: lightgreen;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1> MathCards with Semantic HTML. </h1>
+    </header>
+
+    <main>
+        <hr>
+        <article class="matrix1">
+            <h1>Basic Concepts of Probability</h1>
+            <section class="card">
+                <h1>Random experiements</h1>
+                <p>Repeat process with unknown outputs or events.</p>
+            </section>
+            <section class="card">
+                <h1>Axioms of Probabilty</h1>
+                <p>Fundamental rules defining probability theory.</p>
+            </section>
+            <section class="card">
+                <h1>Computing Probabilty via Counting Methods</h1>
+                <p>The brute force calculation method.</p>
+            </section>
+            <section class="card">
+                <h1>Conditional Probablity</h1>
+                <p>Given some information, what is probabilty of an event?</p>
+            </section>
+
+            <section class="card">
+                <h1>Indepence of Events</h1>
+                <p>Do events effect each other? If so, they are dependent; otherwise they are independent.</p>
+            </section>
+        </article>
+        <hr>
+        <article class="matrix">
+            <h1>Discrete Random Variables</h1>
+            <section class="card">
+                <h1>Random Variable</h1>
+                <p>The mapping of events to real numbers.</p>
+            </section>
+            <section class="card">
+                <h1>Expected Value</h1>
+                <p>The average of probablity times event.</p>
+            </section>
+            <section class="card">
+                <h1>Variance</h1>
+                <p>Variaiton of random variable about it's mean.</p>
+            </section>
+            <section class="card">
+                <h1>Conditional Probablity</h1>
+                <p>Given some information, what is probabilty of an event?</p>
+            </section>
+            <section class="card">
+                <h1>Conditional Expected Value</h1>
+                <p>Combination of Expected value and conditional probablity.</p>
+            </section>
+        </article>
+        <hr>
+        <article class="matrix2">
+            <h1>One Random Variable (discrete, continous, mixed)</h1>
+            <section class="card">
+                <h1>Cumulative Distribution Function</h1>
+                <p>The mapping of cumlative probablities to events.</p>
+            </section>
+            <section class="card">
+                <h1>The Probability Density Function</h1>
+                <p>The mapping probability to events .</p>
+            </section>
+            <section class="card">
+                <h1>Expected Value of X</h1>
+                <p>The `expectation` will never go away.</p>
+            </section>
+            <section class="card">
+                <h1>Functions of Random Variables</h1>
+                <p>Generalizing everything within this section.</p>
+            </section>
+            <section class="card">
+                <h1>The Markov and Chebyshev Inequalities</h1>
+                <p>Computing the probability bounds.</p>
+            </section>
+            <section class="card">
+                <h1>Transform methods</h1>
+                <p>The Fourier Transform in Probability Theory.</p>
+            </section>
+            <section class="card">
+                <h1>Basic Reliabilty Calculations</h1>
+                <p>How good are we?</p>
+            </section>
+            <section class="card">
+                <h1>Entropy</h1>
+                <p>Measuring the uncertainty within a random experiement.</p>
+            </section>
+        </article>
+        <hr>
+    </main>
+
+
+    <footer>
+        <h1> Footer-Bye </h1>
+    </footer>
+
+    <script>
+        const flipCardContainter = document.querySelector(".flip-card-container");
+        flipCardContainter.addEventListener("click", function () {
+            flipCardContainter.classList.toggle("flip");
+        });
+
+    </script>
+
+</body>
+</html>
