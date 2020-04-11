@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>04102020</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial Black", Gadget, sans-serif;
+            /*
+                The box-sizing property allows us to include the padding and
+                border in an element's total width and height. If you set
+                box-sizing: border-box; on an element, padding and border
+                are included in the width and height.
+
+                Since the result of using 'box-sizing: border-box' is so
+                much better, many developers watn all elements on their
+                pages to work this way.
+            */
+        }
+
+
+        body {
+            background-color: oldlace;
+        }
+
+        header, footer, main {
+            background-color: black;
+            color: white;
+            padding: 5em;
+            margin: 1em;
+        }
+
+        /*
+            Apply global text setting for all major blocks.
+        */
+        header,footer,main,article > h1 {
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        header,footer,main,article,.thecard,.thefront,.theback > p {
+            font-family: Arial;
+        }
+
+        article > h1 {
+            color: lightblue;
+            padding: 5px;
+        }
+
+ 
+
+        @media only screen and (min-width: 500px) {
+            article.matrix {
+                display: grid;
+                grid-gap: 20px;
+                /*grid-template-columns: 33% 33% 33%;*/
+                grid-template-columns: 100%;
+            }
+        }
+
+        @media only screen and (min-width: 800px) {
+            article.matrix {
+                display: grid;
+                grid-gap: 20px;
+                /*grid-template-columns: 33% 33% 33%;*/
+                grid-template-columns: minmax(100px, 100%) minmax(100px, 100%) minmax(100px, 100%);
+            }
+        }
+
+        .maincontainer {
+            position: relative;
+            min-width: 100px;
+            min-height: 175px;
+            perspective: 700px;
+        }
+
+        .thecard {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            border-top-style: dashed;
+            border-left-style: dashed;
+            border-color: white;
+
+        }
+
+        .thecard:hover .thefront {
+                background-color: lightblue;
+                color: black;
+
+                border-bottom-right-radius: 10px;
+                padding: 5px;
+            }
+
+        .maincontainer.flip .thecard {
+            transform: rotateX(180deg);
+        }
+
+        .thefront {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            color: white;
+            padding: 5px;
+        }
+
+        .theback {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background-color: oldlace;
+            color: black;
+            transform: rotateX(180deg);
+            padding: 5px;
+            border-top-right-radius: 10px;
+        }
+            .theback p {
+                margin: 5px;
+                font-family: Arial;
+            }
+        .thefront p {
+            margin: 5px;
+            font-family: Arial;
+        }
+
+
+
+        hr {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <header>
+        <h1> MathCards with Semantic HTML. </h1>
+    </header>
+
+    <main>
+
+        <article class="matrix">
+            <h1>Basic Concepts of Probability</h1>
+
+            <div class="maincontainer" onclick="flip_card(this)">
+                <div class="thecard">
+                    <div class="thefront">
+                        <h1>Expected Value:</h1>
+                        <p>details</p>
+                    </div>
+                    <div class="theback">
+                        <h1>Expected Value</h1>
+                        <p>\(m_X\)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="maincontainer" onclick="flip_card(this)">
+                <div class="thecard">
+                    <div class="thefront">
+                        <h1>Variance:</h1>
+                        <p>details</p>
+                    </div>
+                    <div class="theback">
+                        <h1>Variance:</h1>
+                        <p>details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="maincontainer" onclick="flip_card(this)">
+                <div class="thecard">
+                    <div class="thefront">
+                        <h1>The front</h1>
+                        <p>details</p>
+                    </div>
+                    <div class="theback">
+                        <h1>The Back</h1>
+                        <p>details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="maincontainer" onclick="flip_card(this)">
+                <div class="thecard">
+                    <div class="thefront">
+                        <h1>The front</h1>
+                        <p>details</p>
+                    </div>
+                    <div class="theback">
+                        <h1>The Back</h1>
+                        <p>details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="maincontainer" onclick="flip_card(this)">
+                <div class="thecard">
+                    <div class="thefront">
+                        <h1>The front</h1>
+                        <p>details</p>
+                    </div>
+                    <div class="theback">
+                        <h1>The Back</h1>
+                        <p>details</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <h1> Footer-Bye </h1>
+    </footer>
+
+    <script>
+
+
+        // The key in this code was to add the 'onclick = flip-card(this)' to 
+        // all the maincontainers. That was to controll the click event. 
+        // Then within the function, we simply toggle between classes of the 
+        // element. Thus, we needed the 'flip' class selector defined within 
+        // our CSS. 
+        // 
+        // Ex.) 
+        //      .maincontainer.flip .thecard {
+        //          transform: rotateY(180deg);
+        //      }
+        // This selects all the elements with 'thecard' that is a 
+        // descendant of an element with '.maincontainer.flip'.
+        // Thus we refer to this as a 'Descendant Selector'. 
+        // "The descendant CSS selector is used to select elements that are
+        // descendants of other elements. The selected elements do not have 
+        // to be immediate children of the specified ancestor. They just have
+        // to be nested inside the ancestor somewhere. That is how descendant
+        // selectors are different from child selectors."
+        // 
+        // So, it seems two things are occuring in this step. 
+        //   1.) The CSS class selector ".flip" 
+        //   2.) Defines the CSS rule for .thecard
+        // 
+        function flip_card(element) {
+            element.classList.toggle("flip");
+        }
+
+
+    </script>
+</body>
+</html>
