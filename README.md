@@ -1,2 +1,2 @@
 # frontend_webdev
-Holding learning work for frontend web-development
+Repo for my learning of frontend web-development.
