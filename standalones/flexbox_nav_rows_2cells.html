@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>P,S,RV,RP</title>
+
+
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: white;
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+        header {
+            background-color: black;
+            color: white;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+      
+        }
+        .navcell {
+            background-color: inherit;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+        /* Content Rows with EQs and Descriptions*/
+        .content-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: stretch;
+            background-color: inherit;
+        }
+        .content-header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            background-color: black;
+            width: 100%;
+        }
+        .eq-cell {
+            align-self: stretch;
+            justify-self: center;
+            flex-basis: 100%;
+            background-color: lightblue;
+            border: 1px solid black;
+        }
+        .desc-cell {
+            align-self: stretch;
+            justify-self: center;
+            flex-basis: 100%;
+            background-color: lightpink;
+            border: 1px solid black;
+        }
+        .desc-cell-content {
+            margin-left: 0em;
+        }
+        .desc-cell-ul {
+            margin-left: 2em;
+        }
+        .center {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Desktop */
+        @media screen and (min-width: 700px) {
+            .content-row, .content-header {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                align-content: stretch;
+            }
+
+            .eq-cell {
+
+                justify-self: center;
+                flex-basis: 50%;
+                background-color: lightblue;
+            }
+
+            .desc-cell {
+
+                justify-self: center;
+                flex-basis: 50%;
+                background-color: lightpink;
+            }
+        }
+        /* Desktop */
+        @media screen and (min-width: 1100px) {
+            .content-row, .content-header {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .eq-cell {
+                 align-self: stretch;
+                justify-self: center;
+                flex-basis: 50%;
+                background-color: lightblue;
+            }
+            .desc-cell {
+                align-self: stretch;
+                justify-self: center;
+                flex-basis: 50%;
+                background-color: lightpink;
+            }
+        }
+        @media screen and (min-width: 1500px) {
+            .content-row, .content-header {
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .eq-cell {
+                align-self: stretch;
+                justify-self: center;
+                flex-basis: 50%;
+                background-color: lightblue;
+            }
+            .desc-cell {
+                align-self: stretch;
+                justify-self: center;
+                flex-basis: 50%;
+                background-color: lightpink;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Probability, Statistics and Random Processing</h1>
+        </header>
+        <hr>
+        <div class="navbar">
+            <a href="#" class="navcell">About</a>
+            <a href="#" class="navcell">Work</a>
+            <a href="#" class="navcell">Contact</a>
+            <a href="#" class="navcell">asd</a>
+            <a href="#" class="navcell">asdfasd</a>
+        </div>
+        <hr>
+        <div class="content-header">
+            <header>
+                <h1>Basic Statistics and Probabilty Terms:</h1>
+            </header>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Expected Value:</h1>
+                <img class="center" src="../svg_files/expected_value.svg">
+            </article>
+            <article class="desc-cell">
+                <h1>Expected Value:</h1>
+                <p class="desc-cell-content">The expected value is important.</p>
+                <ul class="desc-cell-ul">
+                    <li>fsdf sadf asdf asdf</li>
+                    <li>fsdf sadf asdf asdf</li>
+                    <li>fsdf sadf asdf asdf</li>
+                    <li>fsdf sadf asdf asdf</li>
+                </ul>
+            </article>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Variance:</h1>
+                <img src="../svg_files/variance.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Variance:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Independence:</h1>
+                <img src="../svg_files/ind_a_b.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Independence:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Conditional Probability:</h1>
+                <img src="../svg_files/cond_prob_std.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Conditional Probability:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Conditional Probability of Independent Events:</h1>
+                <img src="../svg_files/cond_prob_ind.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Conditional Probability of Independent Events:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+        <div class="content-header">
+            <header>
+                <h1>Axioms of Probability:</h1>
+            </header>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Axiom I:</h1>
+                <img src="../svg_files/axiom_i.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Axiom I:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Axiom II:</h1>
+                <img src="../svg_files/axiom_ii.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Axiom II:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+        <div class="content-row">
+            <article class="eq-cell">
+                <h1>Axiom III:</h1>
+                <img src="../svg_files/axiom_iii.svg" class="center">
+            </article>
+            <article class="desc-cell">
+                <h1>Axiom III:</h1>
+                <p>Some thing something something</p>
+            </article>
+        </div>
+    </main>
+
+
+</body>
+</html>
+
